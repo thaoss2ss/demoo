@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>puzzle</title>
+<style>
+  element.style{
+      box-shadow: black 1px 2px;
+  }
+  img{
+    ;
+    display: block;
+    margin: 1px;
+    padding:1px ;
+    width: 500px;
+    height: 100px;}
+</style>
+
+</head>
+<body>
+<img onclick="changeIMG()" data-id="Khi"  src="img/monkey_part1x1.jpg" id="imageK" alt="">
+<br>
+<img onclick="changeIMG2()" data-id="Gau" src="img/panda_swap_part2x1.jpg" id="imageG" alt="">
+<br>
+<img onclick="changeIMG3()" data-id="Meo" src="img/funny-cat1_part3x1.jpg" id="imageC" alt="">
+<br>
+<img onclick="changeIMG4()" data-id="Khi" src="img/monkey_part4x1.jpg" id="imageD" alt="">
+<br>
+<img onclick="changeIMG5()" data-id="Gau" src="img/panda_swap_part5x1.jpg" id="imageE" alt="">
+<script>
+  function changeIMG(){
+    let srcImage;
+    let valueDataID;
+    let nameDataID= document.getElementById('imageK').getAttribute('data-id');
+    switch (nameDataID) {
+      case "Khi":
+      srcImage="img/panda_swap_part1x1.jpg";
+      valueDataID ="Gau";
+      break;
+      case "Gau":
+      srcImage="img/panda_swap_part1x1.jpg";
+      valueDataID ="Meo";
+      break;
+      case 'Meo':
+      srcImage="img/monkey_part1x1.jpg";
+      valueDataID ="Khi";
+      break;
+    }
+    document.getElementById('imageK').setAttribute('src',srcImage);
+    document.getElementById('imageK').setAttribute('data-id',valueDataID)
+    checkWin()
+  }
+  function changeIMG2(){
+    let srcImage;
+    let valueDataID;
+    let nameDataID= document.getElementById('imageG').getAttribute('data-id');
+    switch (nameDataID) {
+      case 'Khi':
+        srcImage="img/panda_swap_part2x1.jpg";
+        valueDataID ="Gau";
+        break;
+      case 'Gau':
+        srcImage="img/funny-cat1_part2x1.jpg";
+        valueDataID ="Meo";
+        break;
+      case 'Meo':
+        srcImage="img/monkey_part2x1.jpg";
+        valueDataID ="Khi";
+        break;
+    }
+    document.getElementById('imageG').setAttribute('src',srcImage);
+    document.getElementById('imageG').setAttribute('data-id',valueDataID)
+    checkWin()
+  }
+  function changeIMG3(){
+    let srcImage;
+    let valueDataID;
+    let nameDataID= document.getElementById('imageC').getAttribute('data-id');
+    switch (nameDataID) {
+      case 'Khi':
+        srcImage="img/panda_swap_part3x1.jpg";
+        valueDataID ="Gau";
+        break;
+      case 'Gau':
+        srcImage="img/funny-cat1_part3x1.jpg";
+        valueDataID ="Meo";
+        break;
+      case 'Meo':
+        srcImage="img/monkey_part3x1.jpg";
+        valueDataID ="Khi";
+        break;
+    }
+    document.getElementById('imageC').setAttribute('src',srcImage);
+    document.getElementById('imageC').setAttribute('data-id',valueDataID)
+    checkWin()
+  }
+  function changeIMG4(){
+    let srcImage;
+    let valueDataID;
+    let nameDataID= document.getElementById('imageD').getAttribute('data-id');
+    switch (nameDataID) {
+      case 'Khi':
+        srcImage="img/panda_swap_part4x1.jpg";
+        valueDataID ="Gau";
+        break;
+      case 'Gau':
+        srcImage="img/funny-cat1_part4x1.jpg";
+        valueDataID ="Meo";
+        break;
+      case 'Meo':
+        srcImage="img/monkey_part4x1.jpg";
+        valueDataID ="Khi";
+        break;
+    }
+    document.getElementById('imageD').setAttribute('src',srcImage);
+    document.getElementById('imageD').setAttribute('data-id',valueDataID)
+    checkWin()
+  }
+  function changeIMG5(){
+    let srcImage;
+    let valueDataID;
+    let nameDataID= document.getElementById('imageE').getAttribute('data-id');
+    switch (nameDataID) {
+      case 'Khi':
+        srcImage="img/panda_swap_part5x1.jpg";
+        valueDataID ="Gau";
+        break;
+      case 'Gau':
+        srcImage="img/funny-cat1_part5x1.jpg";
+        valueDataID ="Meo";
+        break;
+      case 'Meo':
+        srcImage="img/monkey_part5x1.jpg";
+        valueDataID ="Khi";
+        break;
+    }
+    document.getElementById('imageE').setAttribute('src',srcImage);
+    document.getElementById('imageE').setAttribute('data-id',valueDataID)
+    checkWin()
+  }
+
+  function checkWin(){
+    let ID1 = document.getElementById('imageK').getAttribute('data-id');
+    let ID2 = document.getElementById('imageG').getAttribute('data-id');
+    let ID3 = document.getElementById('imageC').getAttribute('data-id');
+    let ID4 = document.getElementById('imageD').getAttribute('data-id');
+    let ID5 = document.getElementById('imageE').getAttribute('data-id');
+    if( ID1===ID2 && ID2===ID3 && ID3===ID4 && ID4===ID5 ){
+        document.getElementById('imageK').style.border='2px solid red';
+        document.getElementById('imageG').style.border='2px solid red';
+        document.getElementById('imageC').style.border='2px solid red';
+        document.getElementById('imageD').style.border='2px solid red';
+        document.getElementById('imageE').style.border='2px solid red';
+      } else {
+      document.getElementById('imageK').style.border='';
+      document.getElementById('imageG').style.border='';
+      document.getElementById('imageG').style.border='';
+      document.getElementById('imageD').style.border='';
+      document.getElementById('imageE').style.border='';
+      }
+  }
+</script>
+</body>
+</html>
