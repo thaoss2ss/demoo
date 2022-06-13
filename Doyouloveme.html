@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DO YOU LOVE ME</title>
+  <style>
+    .onY{
+      position: absolute;
+      left: 220px;
+      top: 500px;
+      font-size: 60px;
+    }
+    h1 {
+      position: absolute;
+      left: 200px;
+      top: 230px;
+      font-size: 80px;
+      color: coral;
+    }
+    .onN{
+      position: absolute;
+      left: 530px;
+      top: 500px;
+      font-size: 60px;
+    }
+  </style>
+</head>
+<body>
+<h1> Do U love me?</h1>
+<button class="onY" id="y" onclick="saidyes()"> Yes</button>
+<button class="onN" id="n" onmouseover="saidno()" value=""> No</button>
+<script>
+  function saidyes(){
+    document.getElementById("y").innerHTML = " I love u chiu chiu <3";
+  }
+  function saidno(){
+    let a = Math.floor(Math.random()*window.innerHeight);
+    let b = Math.floor(Math.random()*window.innerWidth);
+    document.getElementById('n').style.left = a + "px";
+    document.getElementById('n').style.top = b + "px";
+  }
+</script>
+</body>
+</html>
