@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let money = Number(prompt("Nhập số tiền gửi ngân hàng lãi suất 5.5%/năm", 0))
+  let month = Number(prompt("Nhập số tháng gửi", 1))
+  let moneymonth = 0
+  let tongtienlai = moneymonth
+  document.write("Số tiền bạn gửi là "+money +" VNĐ trong "+month+" tháng với lãi suất 5.5%/ năm"+"<br>")
+  for (let i=0; i<month;i++){
+    moneymonth = ((money*5.5)/100)/12
+    tongtienlai += moneymonth
+    money+=moneymonth
+    document.write("Tiền lãi tháng "+(i+1)+" là "+moneymonth.toFixed(0)+" VNĐ<br>")
+  }
+  document.write("Tổng tiền lãi của bạn trong "+month+" là "+tongtienlai.toFixed(0)+" VNĐ");
+
+</script>
+</body>
+</html>

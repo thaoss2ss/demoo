@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let h = prompt('Nhập chiều rộng ');
+  let w = prompt('Nhập chiều cao');
+  for(let i =0;i<h;i++){
+    for(let j = 0;j<w;j++) {
+      if (i === 0 || i === h-1 || j === 0 || j === w-1){
+        document.write('*');
+      }
+      else{
+        document.write('&nbsp&nbsp');
+        }
+  }document.write('<br>')
+  }
+</script>
+</body>
+</html>
