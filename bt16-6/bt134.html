@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>tudien</title>
+</head>
+<body>
+<label  for="tudien"></label>
+<input type="text" id="tudien" placeholder="Nhấn từ muốn tìm" name="tudien" value="">
+<button type="button" id="btn"  onclick="kq()">Dịch</button>
+<p id="result"></p>
+<script>
+  function kq() {
+    let tienganh = document.getElementById("tudien").value;
+    let english = ["apple", "orange", "lemon", "strawberry", "banana" , "carrot"];
+    let vietnamese = ["táo", "cam", "chanh", "dâu", "chuối", "cà rốt"];
+    for (let i = 0; i < english.length;i++) {
+      if (english[i] === tienganh) {
+        document.getElementById('result').innerHTML = vietnamese[i];
+        break;
+      }
+      else {
+        i++;
+      }
+    }
+    if (i !== 0) {
+      alert ("Không tìm thấy kết quả");
+    }
+  }
+
+</script>
+</body>
+</html>
