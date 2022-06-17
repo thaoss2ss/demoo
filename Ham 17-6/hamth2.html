@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>chuyển độ F</title>
+</head>
+<body>
+<h1>Chuyển Nhiệt Độ</h1><br>
+<label for="Fah">ĐỘ F :</label>
+<input type="number" id="Fah" placeholder="Độ F"
+       oninput="temperatureSwicth(this.value )"
+       onchange="temperatureSwicth(this.value)"><br>
+<label for="results">ĐỘ C :</label>
+<button type="button" id="results">Kết quả</button>
+<script>
+  function temperatureSwicth(Fahrenheit){
+    Fahrenheit = parseFloat(Fahrenheit);
+    document.getElementById("results").innerHTML = (Fahrenheit-32) / 1.8;
+  }
+</script>
+</body>
+</html>
