@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Học lực</title>
+</head>
+<body>
+<script>
+  let a = parseInt(prompt("Nhập điểm bài kiểm tra:"));
+  let b = parseInt(prompt("Nhập điểm thi giữa kì :"));
+  let c = parseInt(prompt("Nhập điểm thi cuối kì :"));
+  TB = (a + (b*2) +(c*3))/6
+  if(TB >= 8){
+    alert("Học Sinh Giỏi");
+  }else if(TB >= 6.5){
+    alert("Học Sinh Khá");
+  }else if(TB >= 5){
+    alert("Học Sinh Trung Bình");
+  }else {
+    alert("Học Sinh Yếu");
+  }
+</script>
+</body>
+</html>

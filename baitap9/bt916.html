@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hoa hong</title>
+</head>
+<body>
+<label for="DT">Nhập Doanh Thu</label>
+<input type="number" id="DT" value=""><br><br>
+<button onclick="sum()">Thành Tiền </button>
+<p id="HH">Hoa Hồng : </p>
+<p id="money">Tiền Nhận Được :</p>
+<script>
+function sum() {
+  let doanh = +document.getElementById('DT').value;
+  if (0 <doanh && doanh < 2000000) {
+    HH = 4/100;
+  } else if (2000000 <= doanh && doanh< 4000000) {
+    HH = 6/100;
+  } else if (4000000 <= doanh && doanh< 8000000) {
+    HH = 10/100;
+  } else {
+    HH = 9/100;
+  }
+  money = (doanh * HH);
+  document.getElementById('HH').innerHTML= "Hoa Hồng : " +HH +" %";
+  document.getElementById('money').innerHTML= "Tiền Nhận Được :" +money +" VND";
+}
+</script>
+</body>
+</html>

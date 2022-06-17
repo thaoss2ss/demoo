@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<label for="a">Nhập a:</label>
+<input type="number" id="a" value="">
+<label for="b">Nhập b</label>
+<input type="number" id="b" value="">
+<button onclick="sum()">Kết quả</button>
+<p id="result"></p>
+<script>
+  function sum(){
+    let a = document.getElementById('a').value;
+    let b = document.getElementById('b').value;
+    let S = a % b;
+   if(S===0){
+     document.getElementById('result').innerHTML= a+" chia hết cho "+b;}
+   else{
+     document.getElementById('result').innerHTML= a+ " không chia hết cho " +b;
+     }
+  }
+</script>
+</body>
+</html>
