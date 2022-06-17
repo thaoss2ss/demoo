@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vong lap 5</title>
+</head>
+<body>
+<script>
+  let number = prompt('enter a number')
+  count = 0
+  i = 0
+  sum = 0
+  while (count < number) {
+    if (i % 7 === 0) {
+      document.write(i + " ")
+      sum += i;
+      count++
+    }
+    i++
+  }
+  document.write('<br>' + sum)
+</script>
+</body>
+</html>

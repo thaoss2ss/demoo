@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>bai 8</title>
+</head>
+<button onclick="clicka()">Hay click toi</button>
+<p id="in"></p>
+<script>
+  function clicka() {
+    let num1 = +prompt('enter a number1')
+    let num2 = +prompt('enter a number 2')
+    let a = Math.round((Math.random() * (num2 - num1 + 1)) + num1);
+    document.getElementById('in').innerHTML = "Kết quả la: "+a;
+    let b = +prompt('enter a number(number1->number2)')
+    for (let count = 0; count < 3; count++) {
+      if (a === b) {
+        alert('congratulations')
+        break;
+      } else if (b > a) {
+        alert('So lon hon')
+      } else {
+        alert('So be hon')
+      }
+      b = +prompt('enter a number(number1->number2)')
+    }
+  }
+
+</script>
+<body>
+
+</body>
+</html>
