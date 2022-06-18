@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let sotien = Number(prompt("Nhập số tiền lương của bạn (VNĐ)"));
+  if(sotien< 5000000){
+    alert("Lương "+sotien+"VND Bạn mất 5% tiền thuế còn "+((sotien*95)/100)+"VND");
+  }else if(sotien<10000000){
+    alert("Lương "+sotien+"VND Bạn mất 10% tiền thuế còn "+(((sotien*90)/100)+250000)+"VND");
+  }else if(sotien<18000000){
+    alert("Lương "+sotien+"VND Bạn mất 15% tiền thuế còn "+(((sotien*85)/100)+750000)+"VND");
+  }else if(sotien<32000000){
+    alert("Lương "+sotien+"VND Bạn mất 20% tiền thuế còn "+(((sotien*80)/100)+1650000)+"VND");
+  }else if(sotien<52000000){
+    alert("Lương "+sotien+"VND Bạn mất 25% tiền thuế còn "+(((sotien*75)/100)+3250000)+"VND");
+  }else if(sotien<80000000){
+    alert("Lương "+sotien+"VND Bạn mất 30% tiền thuế còn "+(((sotien*70)/100)+5850000)+"VND");
+  }else{
+    alert("Lương "+sotien+"VND Bạn mất 35% tiền thuế còn "+(((sotien*65)/100)+9850000)+"VND");
+  }
+</script>
+</body>
+</html>

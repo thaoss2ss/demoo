@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let sodien = Number(prompt("Nhập số điện nhà bạn dùng"));
+  let tiendien =0;
+  if(sodien <=50){
+    tiendien = 1500 * sodien
+  }else if(sodien<=100){
+    tiendien = (50*1500) + ((sodien-50)*1600);
+  }else if(sodien<=200){
+    tiendien = (50*1500) + (50*1600) + ((sodien-100)*1800);
+  }else if(sodien<=300){
+    tiendien = (50*1500) + (50*1600) + (100*1800) + ((sodien - 200)*2200);
+  }else if(sodien<=400){
+    tiendien = (50*1500) + (50*1600) + (100*1800) + (100*2200) + ((sodien -300)*2500);
+  }else{
+    tiendien = (50*1500) + (50*1600) + (100*1800) + (100*2200) + (100*2500) + ((sodien -400)*2600);
+  }
+  document.write("Số điện nhà bạn hiện tại là "+sodien);
+  document.write("<br>Số tiền điện là "+tiendien+" VNĐ");
+</script>
+</body>
+</html>
