@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ứng dụng vui Faking Textarea on Typing</title>
+</head>
+<body>
+<form action="" name="f">
+  <label for="textare"> Ứng dụng</label><br><br>
+  <textarea name="textare" id="textare" cols="30" rows="10" onkeydown="setTextArea()"></textarea>
+</form>
+<script>
+  let chuoi = "HOW OLD ARE YOU"
+  let cuphap =""
+  function setTextArea() {
+    let area  = document.f.textare.value;
+    let dodai = area.length
+
+    if(dodai >0){
+      for (let i=1; i<= dodai; i++){
+        cuphap += chuoi[i-1]
+        console.log(chuoi[i-1])
+        if(i === 16){
+          cuphap = ""
+          document.f.textare.value = ""
+        }
+      }
+      document.f.textare.value = cuphap
+      cuphap = ""
+      let settime = setTimeout("setTextArea()", 1)
+
+    }
+  }
+
+</script>
+</body>
+</html>
