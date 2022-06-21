@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let Star1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+  let Star2= ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+  let star = prompt('Nhap ten ngoi sao');
+  searchStar(star);
+
+  function searchStar() {
+    let x = Star1.indexOf(star);
+    if (x === -1) {
+      alert('Không Có Ngôi Sao Nào')
+    } else {
+      alert(Star2[x]);
+    }
+  }
+</script>
+</body>
+</html>

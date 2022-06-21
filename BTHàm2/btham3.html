@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+ <style>
+   #table-list-product {
+     width: 500px;
+     background-color: antiquewhite;
+     border-collapse: collapse;
+     text-align: center;
+   }
+
+   #table-list-product tr, td {
+     border: 1px solid #d5d2d2;
+   }
+
+   #head-title {
+     background-color: aqua;
+   }
+
+   .delete-product{
+     background-color: red;
+     color: white;
+   }
+
+   #form-add-product {
+     width: 300px;
+     background-color: aquamarine;
+     border-collapse: collapse;
+   }
+
+   #form-add-product input {
+     width: 95%;
+     float: left;
+   }
+
+   #form-add-product tr, td {
+     border: 1px solid #d5d2d2;
+   }
+
+
+   .form-add {
+     width: 400px;
+     float: left;
+   }
+
+   .table-list {
+     width: 500px;
+     float: left;
+   }
+
+   .update-product {
+     background-color: blue;
+     color: white
+   }
+ </style>
+</head>
+<body>
+<div class="form-add">
+  <h2>Add Product</h2>
+  <table id="form-add-product">
+    <tr>
+      <td>Name</td>
+      <td>
+        <input type="text" id="name">
+        <input type="text" id="index" style="display: none;">
+      </td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td><input type="number" name="price" id="price"></td>
+    </tr>
+    <tr>
+      <td>SLL</td>
+      <td><input type="number" name="sll" id="sll"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button id="add-product-button" onclick="addProduct()">Add</button>
+        <button onclick="updateProduct()" id="update-product-button" style="display:none">Update</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="table-list">
+  <h2>List Product</h2>
+  <input type="text" id="keywords" placeholder="">
+  <button onclick="searchProduct()">Search</button>
+  <table id="table-list-product">
+    <thead>
+    <tr id="head-title">
+      <td>STT</td>
+      <td>Name</td>
+      <td>Price</td>
+      <td>SLL</td>
+      <td></td>
+    </tr>
+    </thead>
+    <tbody id="list-product">
+
+    </tbody>
+  </table>
+  <p id="total-product"></p>
+</div>
+
+<script>
+  let products = [
+    ["Iphone 13", 240000, 20],
+    ["Iphone 11 64GB", 240000, 20],
+    ["Iphone 12 128GB", 240000, 20],
+    ["Samsung", 12000, 10],
+  ]
+
+  function displayListProduct(products) {
+    let html = "";
+
+    products.forEach(function (item, index) {
+      html += "<tr>";
+      html += `<td>${index + 1}</td>`;
+      html += `<td>${item[0]}</td>`;
+      html += `<td>${item[1]}</td>`;
+      html += `<td>${item[2]}</td>`;
+      html += `<td>
+                <button type="button" onclick="deleteProduct(${index})" class="delete-product">Delete</button>
+                <button type="button" onclick="showDateFormUpdate(${index})" class="update-product">Update</button>
+               </td>`
+      html += "</tr>"
+    })
+
+    document.getElementById('total-product').innerHTML = getTotalProduct() + ' product';
+    document.getElementById('list-product').innerHTML = html;
+  }
+
+  displayListProduct(products);
+
+  function deleteProduct(index) {
+    if (confirm('Are you sure you want to delete this product')) {
+      products.splice(index, 1);
+      displayListProduct(products);
+    }
+  }
+
+  function getTotalProduct() {
+    return products.length;
+  }
+
+  function addProduct() {
+    let name = document.getElementById('name').value;
+    let price =document.getElementById('price').value;
+    let sll =document.getElementById('sll').value;
+
+    if (!name || !price || !sll) {
+      alert('Error: Invalid Input')
+    } else {
+      let item = [name, price, sll];
+      products.push(item)
+      clearFormInput();
+      displayListProduct(products);
+    }
+  }
+
+  function clearFormInput() {
+    document.getElementById('name').value = ''
+    document.getElementById('price').value = ''
+    document.getElementById('sll').value = ''
+  }
+
+  function showDateFormUpdate(index) {
+    let productUpdate = products[index];
+    document.getElementById('name').value = productUpdate[0]
+    document.getElementById('price').value = productUpdate[1]
+    document.getElementById('sll').value = productUpdate[2]
+    document.getElementById('index').value = index;
+
+    document.getElementById('update-product-button').style.display = 'block';
+    document.getElementById('add-product-button').style.display = 'none';
+
+  }
+
+  function updateProduct() {
+    let name = document.getElementById('name').value;
+    let price =document.getElementById('price').value;
+    let sll =document.getElementById('sll').value;
+    let index = document.getElementById('index').value;
+
+    if (!name || !price || !sll || !index) {
+      alert('Error: Invalid Input')
+    } else {
+      products[index] = [name, price, sll]
+      clearFormInput();
+      displayListProduct(products);
+
+      document.getElementById('update-product-button').style.display = 'none';
+      document.getElementById('add-product-button').style.display = 'block';
+    }
+  }
+
+  function searchProduct()  {
+    let keywords = document.getElementById('keywords').value;
+    if (keywords) {
+      let results = [];
+      for (const item of products) {
+        if (keywords === item[0]) {
+          results.push(item)
+        }
+      }
+
+      displayListProduct(results)
+    }
+
+
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  inputNumber();
+  totalNumber(a, b);
+  function totalNumber(a,b){
+    if(a<b){
+      return a +b;
+    }else{
+      return alert('mời bạn nhập lại!');
+    }
+  }
+  function inputNumber() {
+    let a = +prompt('Nhập số thứ nhất :');
+    let b = +prompt('Nhập số thứ hai :');
+    alert('Tổng hai số = ' + totalNumber(a, b));
+  }
+</script>
+</body>
+</html>
