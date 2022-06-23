@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let mang = [];
+  let boo = true;
+
+  for (let i = 0; i < 10; i++) {
+    mang[i] = prompt("Nhập số vào mảng");
+    if(mang[i] === "V"){
+      boo =false;
+    }
+  }
+  document.write("Mang = ["+mang+"]<br>");
+  if(boo === false){
+    document.write("V is in the array");
+  }else{
+    document.write("V is not in the array");
+  }
+</script>
+</body>
+</html>

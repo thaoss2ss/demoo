@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let mangso = [];
+  let max = 0;
+  let vitri = 0;
+
+  for(let i=0 ;i<10; i++){
+    mangso[i] = Number(prompt("Nhập số vào mảng"));
+  }
+  document.write("mangso = ["+mangso+"]<br>");
+
+  for (let i=0; i<mangso.length; i++){
+    if(max< mangso[i]){
+      max = mangso[i];
+      vitri = i;
+    }
+  }
+  document.write("Phần tử lớn nhất trong mảng là "+ max + " tại vị trí số " +vitri+ " trong mảng");
+</script>
+</body>
+</html>

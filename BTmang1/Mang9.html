@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let mang1 = [], mang2 = [], mang3 = [];
+  for (let i = 0; i < 10; i++) {
+    let a = Number(prompt("Nhập số vào mảng 1"))
+    mang1.push(a)
+  }
+  for (let j = 0; j < 10; j++) {
+    let b= Number(prompt("Nhập số vào mảng 2"))
+    mang2.push(b)
+  }
+  document.write("Mảng 1 = ["+mang1+"] <br>")
+  document.write("Mảng 2 = ["+mang2+"] <br>")
+  mang3 = mang1
+  for (let i=0; i<mang2.length ; i++){
+    mang3.push(mang2[i])
+  }
+  document.write("Mảng 3 = ["+mang3+"] <br>")
+</script>
+</body>
+</html>
