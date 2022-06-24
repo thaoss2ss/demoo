@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function timMin(mang_so) {
+    let backup
+    for (let i=0; i<mang_so.length; i++){
+      backup = mang_so[0]
+      if (mang_so[i]< backup){
+        backup = mang_so[i]
+      }
+    }
+    return backup
+  }
+
+    let mang_so = []
+    for (let i=0 ; i<3; i++){
+      mang_so.push(Number(prompt("Nhập vào mảng số thứ "+i)))
+    }
+    let min = timMin(mang_so)
+    document.write("Mảng số gồm ["+mang_so+"] <br>")
+    document.write("Số nhỏ nhất trong dãy là "+min)
+
+</script>
+</body>
+</html>

@@ -6,7 +6,22 @@
 </head>
 <body>
 <script>
-  
+  function giaiThua(so) {
+    let giai_thua = 1;
+    if(so>=1){
+      for (let i=1; i<=so; i++){
+        giai_thua = giai_thua * i;
+      }
+    }else if(so === 0 ){
+      giai_thua =  1;
+    }else{
+      return "Giai thừa không xác định được";
+    }
+    return giai_thua;
+  }
+  let so = Number(prompt("Nhập vào một số tính giai thừa"));
+  let gt = giaiThua(so);
+  document.write("Giai thừa của "+so+" = "+gt);
 </script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let mang = ['a','b','c','c','d','d','d','e','d','f']
+  let kytu = prompt("Nhập vào 1 ký tự bất kỳ")
+  document.write("Mảng gồm ["+mang+"]<br>")
+  let kiemtra = kiemTraTrongMang(kytu, mang)
+  if (kiemtra >0){
+    document.write("Có "+kiemtra+" ký tự "+kytu+" trong mảng")
+  }else{
+    document.write("Không có dữ liệu trong mảng")
+
+  }
+  function kiemTraTrongMang(kytu, mang) {
+    let dem=0
+    for (let i=0; i<mang.length; i++){
+      if (kytu === mang[i]) {
+        dem++
+      }
+    }
+    if(dem>0){
+      return dem
+    }
+    return -1
+  }
+</script>
+</body>
+</html>

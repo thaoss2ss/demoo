@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+    let kytu = prompt("Nhập vào ký tự kiểm tra");
+    let check = kiemtraKyTuNguyenAm(kytu);
+    if(check === true){
+      alert(kytu+ " Đây là ký tự số nguyên âm");
+    }else{
+      alert(kytu+ " Không phải ký tự nguyên âm");
+
+
+  }
+  function kiemtraKyTuNguyenAm(kytu) {
+    if(/[a-zA-Z]/.test(kytu) ){
+      return true;
+    }
+    return false;
+    }
+</script>
+</body>
+</html>

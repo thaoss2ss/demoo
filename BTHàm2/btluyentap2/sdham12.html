@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let so_a = prompt("Nhập số thứ nhất");
+  let so_b = prompt("Nhập số thứ hai");
+  let ketqua = doiCho2So(so_a,so_b);
+  document.write("Đổi chỗ 2 số: "+ketqua[0] +" , "+ketqua[1]);
+
+  function doiCho2So(so_a, so_b) {
+    let mang = [so_b,so_a];
+    return mang;
+  }
+</script>
+</body>
+</html>
