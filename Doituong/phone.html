@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+ <script>
+   class Iphone {
+     constructor(id,name,battery) {
+       this.id = id;
+       this.name = name;
+       this.battery = battery;
+     }
+   }
+   class Mobile {
+     id;
+     name;
+     battery;
+     draft;
+     inbox;
+     sent;
+     status;
+     constructor(id, name, battery, draft, inbox, sent,) {
+       this.battery = battery;
+       this.draft = draft;
+       this.inbox = inbox;
+       this.sent = sent;
+       this.status = status;
+     }
+     chargeBattery() {
+       if (battery < 100) {
+         battery++;
+       }
+     }
+     turnOn () {
+       this.status = true;
+       return this.status;
+     }
+     turnOff () {
+       this.status = false;
+       return this.status;
+     }
+     checkStatus () {
+       if (this.status) {
+         return "Turn On"
+       }
+       else {
+         return "Turn Off"
+       }
+     }
+
+
+   }
+ </script>
+</body>
+</html>

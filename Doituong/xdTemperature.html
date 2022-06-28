@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script>
+    class Temperature {
+      celsius;
+      constructor(celsius) {
+        this.celsius = celsius;
+      }
+
+      toFahrenheit() {
+        return 9/5 * this.celsius + 32;
+      }
+
+      toKelvins() {
+        return this.celsius + 273.15
+      }
+    }
+
+    let temperature = new Temperature(25);
+    let myFahrenheit = temperature.toFahrenheit();
+    let myKelvins = temperature.toKelvins();
+
+    document.write("Nhiệt độ Fahrenheit là : " + myFahrenheit + "<br>"
+      + "Nhiệt độ Kelvins là : " + myKelvins)
+
+  </script>
+</body>
+</html>
